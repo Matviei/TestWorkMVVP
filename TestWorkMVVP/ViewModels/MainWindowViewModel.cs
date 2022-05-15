@@ -21,7 +21,7 @@ namespace TestWorkMVVP.ViewModels
             set => Set(ref _SearhValue, value);
         }
 
-        private string _LogMessage = "Хелоу";
+        private string _LogMessage = "Выберите файл";
 
         public string LogMessage
         {
@@ -55,7 +55,14 @@ namespace TestWorkMVVP.ViewModels
 
         private void OnSearhButtoncommandExecuted(object p)
         {
-           int count = FindValue.FindCountValue(Convert.ToInt32(SearhValue));
+            int testConvertInt;
+            if (!int.TryParse(SearhValue, out testConvertInt))
+            {
+                LogMessage += "\nВведите число типа Int32";
+                return;
+
+            }
+            int count = FindValue.FindCountValue(Convert.ToInt32(SearhValue));
            if (count > 0)
            {
                LogMessage += "\nИскомое значение " + SearhValue + " в количестве " + count;
