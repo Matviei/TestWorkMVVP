@@ -1,0 +1,62 @@
+﻿<Window x:Class="TestWorkMVVP.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TestWorkMVVP.ViewModels"
+        xmlns:local="clr-namespace:TestWorkMVVP.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="{Binding LogMessage, UpdateSourceTrigger=PropertyChanged}"
+
+                   ></TextBlock>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button 
+                Width="110" 
+                Height="30"
+                Command="{Binding SortBtCommand}"
+                >Сортировать</Button>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel VerticalAlignment="Center" 
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Height="30">
+                    <TextBlock VerticalAlignment="Center"
+                               >Число для поиска</TextBlock>
+                    <TextBox Width="110"
+                             Margin="10 0 "
+                             Text="{Binding SearhValue}"
+                    ></TextBox>
+                </StackPanel>
+                <Button Grid.Row="1" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Center"
+                        Width="110"
+                        Height="30"
+                        Command="{Binding SearhButtoncommand}"
+                        >Найти число</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
