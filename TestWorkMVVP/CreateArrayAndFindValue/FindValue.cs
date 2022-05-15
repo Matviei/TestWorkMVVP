@@ -7,8 +7,15 @@ using TestWorkMVVP.Models;
 
 namespace TestWorkMVVP.CreateArrayAndFindValue
 {
+    /// <summary>
+    /// Класс для реализации поиска значений в массиве
+    /// </summary>
     public class FindValue
-    {
+    {/// <summary>
+    /// Поиск в массиве по введенному числу
+    /// </summary>
+    /// <param name="searhValue"></param>
+    /// <returns></returns>
         public static int FindCountValue(int searhValue)
         {
             int[] array = ArrayBD.IntArray;

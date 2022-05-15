@@ -20,7 +20,7 @@
                    HorizontalAlignment="Center"
                    Text="{Binding LogMessage, UpdateSourceTrigger=PropertyChanged}"
 
-                   ></TextBlock>
+        ></TextBlock>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>

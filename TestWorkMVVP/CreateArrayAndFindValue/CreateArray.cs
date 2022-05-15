@@ -10,8 +10,14 @@ using TestWorkMVVP.Models;
 
 namespace TestWorkMVVP.CreateArrayAndFindValue
 {
+    /// <summary>
+    /// Выбор файла и приведение к формату массива
+    /// </summary>
     public class CreateArray
     {
+        /// <summary>
+        /// Создание массива чисел
+        /// </summary>
         public static void ArrayCreate()
         {
             string patchToFile = PathFile();
@@ -22,6 +28,11 @@ namespace TestWorkMVVP.CreateArrayAndFindValue
             ArrayBD.IntArray = GetArray(patchToFile);
             
         }
+        /// <summary>
+        /// Возвращние массива чисел по пути к файлу txt
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         private static int[] GetArray(string path)
         {
             string stringValue = File.ReadAllText(path);
@@ -41,6 +52,10 @@ namespace TestWorkMVVP.CreateArrayAndFindValue
             valueList.Sort();
             return valueList.ToArray();
         }
+        /// <summary>
+        /// Открытие проводника и возвращение пути к выбранному файлу
+        /// </summary>
+        /// <returns></returns>
         private static string PathFile()
         {
             OpenFileDialog dialogExplorer = new OpenFileDialog();

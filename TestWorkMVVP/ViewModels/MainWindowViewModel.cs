@@ -13,6 +13,7 @@ namespace TestWorkMVVP.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
+        //переменная которове вводится для поиска в массиве
         private string _SearhValue;
 
         public string SearhValue
@@ -20,7 +21,7 @@ namespace TestWorkMVVP.ViewModels
             get => _SearhValue;
             set => Set(ref _SearhValue, value);
         }
-
+        //переменная для создания лога сообщений
         private string _LogMessage = "Выберите файл";
 
         public string LogMessage
@@ -28,7 +29,7 @@ namespace TestWorkMVVP.ViewModels
             get => _LogMessage;
             set => Set(ref _LogMessage, value);
         }
-
+        //команда для кнопки "сортировка"
         public ICommand SortBtCommand { get; }
 
         private bool CanSortBtCommandExecuted(object p) => true;
@@ -46,6 +47,7 @@ namespace TestWorkMVVP.ViewModels
             LogMessage += "\nУспешно добавлено и отсортировано";
         }
 
+        //команда для кнопки "поиск числа"
         public ICommand SearhButtoncommand { get; }
 
         private bool CanSearhButtoncommandExecuted(object p)

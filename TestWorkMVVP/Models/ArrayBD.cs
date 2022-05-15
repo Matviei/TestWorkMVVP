@@ -8,6 +8,9 @@ namespace TestWorkMVVP.Models
 {
     public class ArrayBD
     {
+        /// <summary>
+        /// Хранение отсортированного массива чисел
+        /// </summary>
         public static int[] IntArray;
     }
 }
